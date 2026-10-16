@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu Scan – Digitalisez le menu de votre restaurant</title>
+  <meta name="description" content="Menu Scan transforme vos menus physiques en menus numériques accessibles sur smartphone grâce à un simple QR code. Solution simple, rapide et moderne." />
+  <meta name="keywords" content="menu numérique, QR code restaurant, digitalisation menu, menu scan" />
+  <link rel="stylesheet" href="style.css" />
+  <meta property="og:title" content="Menu Scan – Le menu de votre restaurant, à portée de scan." />
+  <meta property="og:description" content="Transformez votre menu physique en expérience numérique accessible instantanément." />
+  <meta property="og:type" content="website" />
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header>
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-inner">
+      <a href="#accueil" class="nav-logo" aria-label="Menu Scan – Accueil">
+        <img src="images/logo.png" alt="Menu Scan" />
+      </a>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary btn-sm" id="nav-cta-btn">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Digitaliser mon menu
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="accueil" aria-label="Section d'accueil">
+  <div class="hero-content container">
+    <h1 class="hero-title">Le menu de votre restaurant,<br />à portée de <span>scan.</span></h1>
+    <p class="hero-subtitle">Menu Scan transforme vos menus physiques en expériences numériques accessibles instantanément grâce à un simple QR code.</p>
+    <div class="hero-buttons">
+      <a href="#comment" class="btn btn-primary" id="hero-discover-btn">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Découvrir la solution
+      </a>
+      <a href="#contact" class="btn btn-outline" id="hero-partner-btn">
+        Devenir partenaire
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Phone Showcase avec défilement continu horizontal à travers le smartphone -->
+  <div class="phone-showcase" id="phoneShowcase" aria-label="Présentation interactive des menus de restaurants">
+    
+    <!-- Calque d'arrière-plan : piste horizontale de cartes qui défilent de droite à gauche -->
+    <div class="stream-viewport" aria-hidden="false">
+      <div class="stream-track" id="streamTrack">
+        <!-- Set 1 -->
+        <div class="stream-card" data-index="0" data-unique="0" role="button" aria-label="Menu Saveurs d'Afrique">
+          <img src="images/menu_africain.jpg" alt="Menu Saveurs d'Afrique" loading="eager" />
+        </div>
+        <div class="stream-card" data-index="1" data-unique="1" role="button" aria-label="Menu Urban Burger Co.">
+          <img src="images/menu_burger.jpg" alt="Menu Urban Burger Co." loading="lazy" />
+        </div>
+        <div class="stream-card" data-index="2" data-unique="2" role="button" aria-label="Menu Le Jardin Gastronomique">
+          <img src="images/menu_gastro.jpg" alt="Menu Le Jardin Gastronomique" loading="lazy" />
+        </div>
+        <div class="stream-card" data-index="3" data-unique="3" role="button" aria-label="Menu Café Lumière">
+          <img src="images/menu_cafe.jpg" alt="Menu Café Lumière" loading="lazy" />
+        </div>
+
+        <!-- Set 2 (Série active principale) -->
+        <div class="stream-card is-center" data-index="4" data-unique="0" role="button" aria-label="Menu Saveurs d'Afrique">
+          <img src="images/menu_africain.jpg" alt="Menu Saveurs d'Afrique" loading="eager" />
+        </div>
+        <div class="stream-card is-right" data-index="5" data-unique="1" role="button" aria-label="Menu Urban Burger Co.">
+          <img src="images/menu_burger.jpg" alt="Menu Urban Burger Co." loading="lazy" />
+        </div>
+        <div class="stream-card is-far-right" data-index="6" data-unique="2" role="button" aria-label="Menu Le Jardin Gastronomique">
+          <img src="images/menu_gastro.jpg" alt="Menu Le Jardin Gastronomique" loading="lazy" />
+        </div>
+        <div class="stream-card is-offscreen" data-index="7" data-unique="3" role="button" aria-label="Menu Café Lumière">
+          <img src="images/menu_cafe.jpg" alt="Menu Café Lumière" loading="lazy" />
+        </div>
+
+        <!-- Set 3 -->
+        <div class="stream-card is-offscreen" data-index="8" data-unique="0" role="button" aria-label="Menu Saveurs d'Afrique">
+          <img src="images/menu_africain.jpg" alt="Menu Saveurs d'Afrique" loading="lazy" />
+        </div>
+        <div class="stream-card is-offscreen" data-index="9" data-unique="1" role="button" aria-label="Menu Urban Burger Co.">
+          <img src="images/menu_burger.jpg" alt="Menu Urban Burger Co." loading="lazy" />
+        </div>
+        <div class="stream-card is-offscreen" data-index="10" data-unique="2" role="button" aria-label="Menu Le Jardin Gastronomique">
+          <img src="images/menu_gastro.jpg" alt="Menu Le Jardin Gastronomique" loading="lazy" />
+        </div>
+        <div class="stream-card is-offscreen" data-index="11" data-unique="3" role="button" aria-label="Menu Café Lumière">
+          <img src="images/menu_cafe.jpg" alt="Menu Café Lumière" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Téléphone au premier plan (cadre physique avec écran transparent) -->
+    <div class="phone-wrapper" aria-hidden="true">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-status">
+          <span class="time" id="phoneTime">12:45</span>
+          <div class="icons">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="14" height="14"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M22 11v2"/></svg>
+          </div>
+        </div>
+        <div class="phone-home-indicator"></div>
+      </div>
+    </div>
+
+    <!-- Contrôles et indicateur en dessous du smartphone -->
+    <div class="phone-bottom-bar">
+      <div class="phone-dots" id="phoneDots" role="tablist" aria-label="Navigation des menus">
+        <button class="phone-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Saveurs d'Afrique"></button>
+        <button class="phone-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Urban Burger Co."></button>
+        <button class="phone-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Le Jardin Gastronomique"></button>
+        <button class="phone-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Café Lumière"></button>
+      </div>
+      <div class="phone-active-label" id="phoneActiveLabel">
+        <span class="live-indicator"></span>
+        <strong id="restaurantTitle">Saveurs d'Afrique</strong> &mdash; <span>Menu numérique en direct</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats" id="fonctionnalites" aria-label="Chiffres clés">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:60px">
+      <div class="section-tag">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        Nos indicateurs
+      </div>
+      <h2 class="section-title">Menu Scan en chiffres</h2>
+      <p class="section-subtitle">Des résultats concrets pour les restaurants qui ont choisi le numérique.</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card reveal reveal-delay-1">
+        <div class="stat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="stat-value">12<span>+</span></div>
+        <div class="stat-label">Restaurants partenaires<br /><em style="font-size:12px;font-weight:400">(en croissance)</em></div>
+      </div>
+      <div class="stat-card reveal reveal-delay-2">
+        <div class="stat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="stat-value">35<span>+</span></div>
+        <div class="stat-label">Menus digitalisés<br /><em style="font-size:12px;font-weight:400">(et mis à jour)</em></div>
+      </div>
+      <div class="stat-card reveal reveal-delay-3">
+        <div class="stat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div class="stat-value">&lt;3<span>s</span></div>
+        <div class="stat-label">Pour accéder au menu<br /><em style="font-size:12px;font-weight:400">depuis un smartphone</em></div>
+      </div>
+      <div class="stat-card reveal reveal-delay-4">
+        <div class="stat-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+        <div class="stat-value">100<span>%</span></div>
+        <div class="stat-label">Mise à jour en ligne<br /><em style="font-size:12px;font-weight:400">sans réimpression</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners" id="partenaires" aria-label="Restaurants partenaires">
+  <div class="container">
+    <div class="partners-header text-center reveal">
+      <div class="section-tag">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Restaurants partenaires
+      </div>
+      <h2 class="section-title">Ils ont choisi Menu Scan</h2>
+      <p class="section-subtitle">Découvrez les restaurants qui ont digitalisé leur menu. Les exemples ci-dessous sont illustratifs — vos vrais menus seront intégrés après confirmation.</p>
+    </div>
+    <div class="partners-grid">
+
+      <article class="partner-card reveal reveal-delay-1">
+        <div class="partner-card-image">
+          <img src="images/restaurant_africain.jpg" alt="Restaurant Saveurs d'Afrique" loading="lazy" />
+          <span class="partner-badge">🍽️ Cuisine africaine</span>
+        </div>
+        <div class="partner-card-body">
+          <h3 class="partner-card-name">Saveurs d'Afrique</h3>
+          <p class="partner-card-desc">Restaurant authentique proposant les meilleures spécialités d'Afrique de l'Ouest : thiéboudienne, poulet yassa, attiéké et bien plus encore.</p>
+          <div class="partner-preview">
+            <div class="partner-preview-qr">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="28" height="28"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 17v3M17 14h3"/></svg>
+            </div>
+            <div class="partner-preview-info">
+              <div class="partner-preview-title">Menu numérique actif</div>
+              <div class="partner-preview-sub">4 catégories · 18 plats · FCFA</div>
+            </div>
+          </div>
+          <div class="partner-card-footer">
+            <a href="#contact" class="btn btn-primary">Découvrir le menu</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="partner-card reveal reveal-delay-2">
+        <div class="partner-card-image">
+          <img src="images/restaurant_burger.jpg" alt="Restaurant Urban Burger Co." loading="lazy" />
+          <span class="partner-badge">🍔 Burgers</span>
+        </div>
+        <div class="partner-card-body">
+          <h3 class="partner-card-name">Urban Burger Co.</h3>
+          <p class="partner-card-desc">Le meilleur du burger artisanal : smash burgers, burgers au poulet croustillant, combos et sides. Une expérience gourmande unique.</p>
+          <div class="partner-preview">
+            <div class="partner-preview-qr">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="28" height="28"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 17v3M17 14h3"/></svg>
+            </div>
+            <div class="partner-preview-info">
+              <div class="partner-preview-title">Menu numérique actif</div>
+              <div class="partner-preview-sub">4 catégories · 12 plats · FCFA</div>
+            </div>
+          </div>
+          <div class="partner-card-footer">
+            <a href="#contact" class="btn btn-primary">Découvrir le menu</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="partner-card reveal reveal-delay-3" style="background: linear-gradient(135deg, #f8f8f8, #f0f0f0);">
+        <div class="partner-card-image" style="background: linear-gradient(135deg, #FFF3EC, #FFE0CC); display:flex; align-items:center; justify-content:center; height:220px;">
+          <div style="text-align:center; padding:24px;">
+            <div style="width:80px;height:80px;background:rgba(255,255,255,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:3px dashed #E8600A;">
+              <svg width="36" height="36" fill="none" stroke="#E8600A" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <p style="color:#E8600A;font-weight:700;font-size:15px;">Votre restaurant ici</p>
+          </div>
+          <span class="partner-badge">✨ Prochainement</span>
+        </div>
+        <div class="partner-card-body">
+          <h3 class="partner-card-name">Votre établissement</h3>
+          <p class="partner-card-desc">Cette carte est réservée pour le prochain restaurant partenaire. Rejoignez Menu Scan et bénéficiez d'un menu numérique professionnel en quelques jours.</p>
+          <div class="partner-preview" style="border: 2px dashed #FFE0CC;">
+            <div class="partner-preview-qr" style="background:#FFF3EC; border: 2px dashed #E8600A;">
+              <svg fill="none" stroke="#E8600A" stroke-width="2" viewBox="0 0 24 24" width="28" height="28"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM17 17h3v3h-3zM14 17v3M17 14h3"/></svg>
+            </div>
+            <div class="partner-preview-info">
+              <div class="partner-preview-title">QR Code à venir</div>
+              <div class="partner-preview-sub">Contactez-nous pour démarrer</div>
+            </div>
+          </div>
+          <div class="partner-card-footer">
+            <a href="#contact" class="btn btn-primary">Rejoindre Menu Scan</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="comment" aria-label="Comment ça marche">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        Processus simple
+      </div>
+      <h2 class="section-title">Comment ça marche ?</h2>
+      <p class="section-subtitle">En seulement 3 étapes, votre menu physique devient une expérience numérique moderne.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-number">1</div>
+        <div class="step-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+        <h3 class="step-title">Envoyez votre menu</h3>
+        <p class="step-desc">Transmettez votre menu physique, une photo ou un fichier PDF à notre équipe. Aucun outil technique requis de votre côté.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-number">2</div>
+        <div class="step-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3 class="step-title">Nous créons votre menu numérique</h3>
+        <p class="step-desc">Notre équipe conçoit un menu numérique professionnel avec vos plats, photos, prix en FCFA et catégories. Livraison rapide garantie.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-number">3</div>
+        <div class="step-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3 class="step-title">Vos clients scannent et consultent</h3>
+        <p class="step-desc">Affichez le QR code dans votre restaurant. Vos clients le scannent et accèdent instantanément à votre menu depuis leur smartphone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section class="advantages" id="avantages" aria-label="Avantages Menu Scan">
+  <div class="container">
+    <div class="advantages-layout">
+      <div class="advantages-visual reveal">
+        <div class="adv-phone-mini">
+          <div class="adv-phone-mini-screen">
+            <img src="images/menu_africain.jpg" alt="Aperçu menu numérique" loading="lazy" />
+          </div>
+        </div>
+        <div class="adv-floating-badge">
+          <div class="badge-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <div>
+            <div style="font-size:12px;color:#6B7280">Menu mis à jour</div>
+            <div>En temps réel</div>
+          </div>
+        </div>
+        <div class="adv-floating-badge">
+          <div class="badge-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <div style="font-size:12px;color:#6B7280">Accès sécurisé</div>
+            <div>Sans application</div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="section-tag">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Pourquoi Menu Scan ?
+        </div>
+        <h2 class="section-title">Des avantages concrets pour votre restaurant</h2>
+        <div class="advantages-list">
+          <div class="adv-item">
+            <div class="adv-item-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="adv-item-content">
+              <h4>Consultation ultra-rapide</h4>
+              <p>Vos clients accèdent à votre menu en moins de 3 secondes, directement depuis leur smartphone. Aucun téléchargement nécessaire.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-item-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+            <div class="adv-item-content">
+              <h4>Présentation moderne des plats</h4>
+              <p>Mettez en valeur vos plats avec des photos appétissantes, des descriptions détaillées et une mise en page professionnelle.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-item-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <div class="adv-item-content">
+              <h4>Mise à jour des prix facilitée</h4>
+              <p>Modifiez vos prix, ajoutez ou supprimez des plats instantanément, sans réimprimer de menus papier coûteux.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-item-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+            <div class="adv-item-content">
+              <h4>Réduction des coûts d'impression</h4>
+              <p>Éliminez les frais répétés de réimpression. Votre menu numérique reste toujours à jour sans aucun coût supplémentaire.</p>
+            </div>
+          </div>
+          <div class="adv-item">
+            <div class="adv-item-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div class="adv-item-content">
+              <h4>Expérience client améliorée</h4>
+              <p>Offrez à vos clients une expérience de consultation fluide, moderne et sans contact physique avec un menu partagé.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact" aria-label="Contact et appel à l'action">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <div class="section-tag">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Passez au numérique
+      </div>
+      <h2 class="cta-title">Prêt à faire passer votre restaurant<br /><span>au numérique ?</span></h2>
+      <p class="cta-subtitle">Rejoignez Menu Scan et offrez à vos clients une expérience de consultation moderne, rapide et sans friction.</p>
+      <div class="cta-buttons">
+        <a href="mailto:contact@menuscan.com" class="btn btn-primary" id="cta-main-btn">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          Digitaliser mon menu
+        </a>
+        <a href="https://wa.me/+221000000000" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white" id="cta-whatsapp-btn">
+          Contacter sur WhatsApp
+        </a>
+      </div>
+      <div class="cta-contacts">
+        <a href="mailto:contact@menuscan.com" class="cta-contact-item" id="contact-email">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          contact@menuscan.com <small style="opacity:.5;margin-left:4px">(à configurer)</small>
+        </a>
+        <a href="https://wa.me/+221000000000" target="_blank" rel="noopener noreferrer" class="cta-contact-item" id="contact-whatsapp">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.78-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          WhatsApp professionnel <small style="opacity:.5;margin-left:4px">(à configurer)</small>
+        </a>
+        <a href="#" class="cta-contact-item" id="contact-instagram">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          @menuscan <small style="opacity:.5;margin-left:4px">(à configurer)</small>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" aria-label="Pied de page">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="images/logo.png" alt="Menu Scan" class="footer-brand-logo" />
+        <p class="footer-brand-desc">Menu Scan digitalise les menus des restaurants grâce à des QR codes modernes, permettant à vos clients de consulter votre carte instantanément sur smartphone.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/+221000000000" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.113 1.524 5.843L.057 23.286c-.1.315.014.656.274.856.26.2.614.224.899.061L6.571 22.5C8.276 23.463 10.076 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.805 0-3.539-.476-5.044-1.314l-.361-.21-3.741.979.999-3.645-.229-.375A9.932 9.932 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Navigation</h4>
+        <nav class="footer-links" aria-label="Navigation pied de page">
+          <a href="#accueil">Accueil</a>
+          <a href="#fonctionnalites">Fonctionnalités</a>
+          <a href="#partenaires">Restaurants</a>
+          <a href="#comment">Comment ça marche</a>
+          <a href="#avantages">Avantages</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Services</h4>
+        <nav class="footer-links" aria-label="Services">
+          <a href="#contact">Digitalisation de menu</a>
+          <a href="#contact">Création QR Code</a>
+          <a href="#contact">Mise à jour menu</a>
+          <a href="#contact">Devenir partenaire</a>
+          <a href="#contact">Support</a>
+        </nav>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Contact</h4>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:contact@menuscan.com">contact@menuscan.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.38.266.75.42 1.1L9 6.4a16 16 0 0 0 6 6l.78-.78a2 2 0 0 1 2.11-.45c.35.154.72.293 1.1.42A2 2 0 0 1 22 16.92z"/></svg>
+          <span>WhatsApp pro (à configurer)</span>
+        </div>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Dakar, Sénégal</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Menu Scan &middot; Tous droits réservés. Conception QR Code.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">CGU</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
