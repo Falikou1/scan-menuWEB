@@ -56,10 +56,10 @@ const phoneDots    = qsa('.phone-dot');
 const activeTitle  = qs('#restaurantTitle');
 
 const RESTAURANT_DATA = [
-  { name: "Saveurs d'Afrique", tag: "🍽️ Saveurs d'Afrique", price: "Dakar · 4 500 FCFA" },
-  { name: "Urban Burger Co.", tag: "🍔 Urban Burger Co.", price: "Burger · 5 200 FCFA" },
-  { name: "Le Jardin Gastronomique", tag: "🍷 Le Jardin Gastro", price: "Gourmet · 12 000 FCFA" },
-  { name: "Café Lumière", tag: "☕ Café Lumière", price: "Brunch · 2 800 FCFA" }
+  { name: "Saveurs d'Afrique", tag: "Saveurs d'Afrique", price: "Dakar · 4 500 FCFA" },
+  { name: "Urban Burger Co.", tag: "Urban Burger Co.", price: "Burger · 5 200 FCFA" },
+  { name: "Le Jardin Gastronomique", tag: "Le Jardin Gastro", price: "Gourmet · 12 000 FCFA" },
+  { name: "Café Lumière", tag: "Café Lumière", price: "Brunch · 2 800 FCFA" }
 ];
 
 const TOTAL_UNIQUE = 4;
