@@ -48,12 +48,14 @@ if (hamburger && mobileMenu) {
   });
 }
 
-/* ─── Horizontal Continuous Menu Stream ─── */
+/* ─── PowerPoint-Style Phone Showcase Slider ─── */
 const showcase     = qs('#phoneShowcase');
-const streamTrack  = qs('#streamTrack');
-const streamCards  = qsa('.stream-card', streamTrack || document);
+const phoneScreen  = qs('#phoneScreen');
+const phoneSlides  = qsa('.phone-slide', phoneScreen || document);
 const phoneDots    = qsa('.phone-dot');
 const activeTitle  = qs('#restaurantTitle');
+const prevBtn      = qs('#phonePrevBtn');
+const nextBtn      = qs('#phoneNextBtn');
 
 const RESTAURANT_DATA = [
   { name: "Saveurs d'Afrique", tag: "Saveurs d'Afrique", price: "Dakar · 4 500 FCFA" },
@@ -62,169 +64,150 @@ const RESTAURANT_DATA = [
   { name: "Café Lumière", tag: "Café Lumière", price: "Brunch · 2 800 FCFA" }
 ];
 
-const TOTAL_UNIQUE = 4;
-let activeIndex = 4; // Start in the middle set (card 4 = Saveurs d'Afrique)
+const TOTAL_SLIDES = phoneSlides.length || 4;
+let currentIndex = 0;
 let isAnimating = false;
 let autoTimer = null;
-const PAUSE_DURATION = 2600; // Time stationary inside the phone
-const TRANSITION_DURATION = 1100; // Slide transition duration
-const TRANSITION_EASE = 'transform 1.1s cubic-bezier(0.22, 1, 0.36, 1)';
+const SLIDE_PAUSE_DURATION = 3500; // Time stationary inside the phone
+const SLIDE_TRANSITION_DURATION = 850; // PowerPoint transition duration (matches CSS)
 
-// Calculate card step based on card width + total horizontal margin
-const getCardStep = () => {
-  if (!streamCards.length) return 336;
-  const firstCard = streamCards[0];
-  const style = window.getComputedStyle(firstCard);
-  const width = firstCard.offsetWidth;
-  const marginLeft = parseFloat(style.marginLeft) || 0;
-  const marginRight = parseFloat(style.marginRight) || 0;
-  return width + marginLeft + marginRight;
-};
+// Go to a specific slide with smooth PowerPoint transition (fade + slide + subtle zoom)
+const goToSlide = (targetIndex, direction = 'next') => {
+  if (isAnimating || targetIndex === currentIndex || !phoneSlides.length) return;
+  isAnimating = true;
 
-// Update card dynamic visual states (center, left, right, far, offscreen)
-const updateCardStates = () => {
-  streamCards.forEach((card, idx) => {
-    const diff = idx - activeIndex;
-    card.classList.remove('is-center', 'is-left', 'is-right', 'is-far-left', 'is-far-right', 'is-offscreen');
-    
-    if (diff === 0) {
-      card.classList.add('is-center');
-    } else if (diff === -1) {
-      card.classList.add('is-left');
-    } else if (diff === 1) {
-      card.classList.add('is-right');
-    } else if (diff === -2) {
-      card.classList.add('is-far-left');
-    } else if (diff === 2) {
-      card.classList.add('is-far-right');
-    } else {
-      card.classList.add('is-offscreen');
-    }
-  });
+  // Normalize index within bounds [0, TOTAL_SLIDES - 1]
+  const nextIndex = (targetIndex + TOTAL_SLIDES) % TOTAL_SLIDES;
+  const currentSlide = phoneSlides[currentIndex];
+  const nextSlide = phoneSlides[nextIndex];
 
-  // Update dots
-  const currentUnique = activeIndex % TOTAL_UNIQUE;
+  // Update dots navigation state
   phoneDots.forEach((dot, idx) => {
-    const isActive = idx === currentUnique;
+    const isActive = idx === nextIndex;
     dot.classList.toggle('active', isActive);
     dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
   });
 
-  // Update restaurant label
-  if (activeTitle && RESTAURANT_DATA[currentUnique]) {
-    activeTitle.textContent = RESTAURANT_DATA[currentUnique].name;
+  // Smooth fade transition for the restaurant title label
+  if (activeTitle && RESTAURANT_DATA[nextIndex]) {
+    activeTitle.style.opacity = '0';
+    activeTitle.style.transform = 'translateY(4px)';
+    setTimeout(() => {
+      activeTitle.textContent = RESTAURANT_DATA[nextIndex].name;
+      activeTitle.style.opacity = '1';
+      activeTitle.style.transform = 'translateY(0)';
+    }, 200);
   }
-};
 
-// Position track at activeIndex
-const applyTrackPosition = (withTransition = true) => {
-  if (!streamTrack) return;
-  const step = getCardStep();
-  const translateX = -((activeIndex + 0.5) * step);
+  // Remove any legacy animation classes
+  phoneSlides.forEach(slide => {
+    slide.classList.remove('slide-in-next', 'slide-out-next', 'slide-in-prev', 'slide-out-prev');
+  });
 
-  if (withTransition) {
-    streamTrack.style.transition = TRANSITION_EASE;
+  // Apply direction-based PowerPoint transition classes
+  if (direction === 'next') {
+    nextSlide.classList.add('slide-in-next');
+    currentSlide.classList.add('slide-out-next');
   } else {
-    streamTrack.style.transition = 'none';
+    nextSlide.classList.add('slide-in-prev');
+    currentSlide.classList.add('slide-out-prev');
   }
-  streamTrack.style.transform = `translate(${translateX}px, -50%)`;
-};
 
-// Slide to a specific index
-const slideTo = (targetIndex) => {
-  if (isAnimating || !streamTrack) return;
-  isAnimating = true;
-
-  activeIndex = targetIndex;
-  applyTrackPosition(true);
-  updateCardStates();
-
+  // When animation finishes, clean up and set active state
   setTimeout(() => {
-    // Seamless wrap-around reset
-    if (activeIndex >= 8) {
-      activeIndex = activeIndex - TOTAL_UNIQUE;
-      applyTrackPosition(false);
-      updateCardStates();
-      void streamTrack.offsetHeight;
-    } else if (activeIndex < 4) {
-      activeIndex = activeIndex + TOTAL_UNIQUE;
-      applyTrackPosition(false);
-      updateCardStates();
-      void streamTrack.offsetHeight;
-    }
+    currentSlide.classList.remove('is-active', 'slide-out-next', 'slide-out-prev');
+    nextSlide.classList.remove('slide-in-next', 'slide-in-prev');
+    nextSlide.classList.add('is-active');
+    currentIndex = nextIndex;
     isAnimating = false;
-  }, TRANSITION_DURATION);
+  }, SLIDE_TRANSITION_DURATION);
 };
 
-const nextCard = () => {
-  slideTo(activeIndex + 1);
+const nextSlide = () => {
+  goToSlide(currentIndex + 1, 'next');
 };
 
-const prevCard = () => {
-  slideTo(activeIndex - 1);
+const prevSlide = () => {
+  goToSlide(currentIndex - 1, 'prev');
 };
 
-const startAutoStream = () => {
-  stopAutoStream();
+const startAutoSlide = () => {
+  stopAutoSlide();
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   
   autoTimer = setInterval(() => {
-    nextCard();
-  }, PAUSE_DURATION + TRANSITION_DURATION);
+    nextSlide();
+  }, SLIDE_PAUSE_DURATION + SLIDE_TRANSITION_DURATION);
 };
 
-const stopAutoStream = () => {
+const stopAutoSlide = () => {
   if (autoTimer) {
     clearInterval(autoTimer);
     autoTimer = null;
   }
 };
 
-// Initialize stream
-if (streamTrack && streamCards.length) {
-  applyTrackPosition(false);
-  updateCardStates();
-  startAutoStream();
+// Initialize PowerPoint Showcase
+if (phoneSlides.length) {
+  // Ensure the initial active slide is properly displayed
+  phoneSlides.forEach((slide, idx) => {
+    slide.classList.toggle('is-active', idx === 0);
+  });
+  phoneDots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === 0);
+  });
+  if (activeTitle && RESTAURANT_DATA[0]) {
+    activeTitle.textContent = RESTAURANT_DATA[0].name;
+  }
+
+  startAutoSlide();
+
+  // Navigation buttons (Prev / Next)
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      startAutoSlide();
+    });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      startAutoSlide();
+    });
+  }
+
+  // Dots click navigation
+  phoneDots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      const target = parseInt(dot.dataset.slide, 10);
+      if (isNaN(target) || target === currentIndex) return;
+      const dir = target > currentIndex ? 'next' : 'prev';
+      goToSlide(target, dir);
+      startAutoSlide();
+    });
+  });
 
   // Pause on hover
   if (showcase) {
-    showcase.addEventListener('mouseenter', stopAutoStream);
-    showcase.addEventListener('mouseleave', startAutoStream);
+    showcase.addEventListener('mouseenter', stopAutoSlide);
+    showcase.addEventListener('mouseleave', startAutoSlide);
   }
 
-  // Click on dots
-  phoneDots.forEach((dot) => {
-    dot.addEventListener('click', () => {
-      const targetUnique = parseInt(dot.dataset.slide, 10);
-      const currentUnique = activeIndex % TOTAL_UNIQUE;
-      let diff = targetUnique - currentUnique;
-      if (diff === 0) return;
-      slideTo(activeIndex + diff);
-      startAutoStream();
+  // Click on phone screen advances slide
+  if (phoneScreen) {
+    phoneScreen.style.cursor = 'pointer';
+    phoneScreen.addEventListener('click', () => {
+      nextSlide();
+      startAutoSlide();
     });
-  });
+  }
 
-  // Click on cards to focus
-  streamCards.forEach((card, idx) => {
-    card.addEventListener('click', () => {
-      if (idx !== activeIndex) {
-        slideTo(idx);
-        startAutoStream();
-      }
-    });
-  });
-
-  // Resize listener
-  window.addEventListener('resize', () => {
-    applyTrackPosition(false);
-  });
-
-  // Touch swipe support
+  // Touch swipe support on phone screen
   let touchStartX = 0;
   if (showcase) {
     showcase.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
-      stopAutoStream();
+      stopAutoSlide();
     }, { passive: true });
 
     showcase.addEventListener('touchend', (e) => {
@@ -232,14 +215,25 @@ if (streamTrack && streamCards.length) {
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 40) {
         if (diff > 0) {
-          nextCard();
+          nextSlide();
         } else {
-          prevCard();
+          prevSlide();
         }
       }
-      startAutoStream();
+      startAutoSlide();
     }, { passive: true });
   }
+
+  // Keyboard navigation when user is on the page
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      prevSlide();
+      startAutoSlide();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+      startAutoSlide();
+    }
+  });
 }
 
 /* ─── Live Clock inside phone ─── */
