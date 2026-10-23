@@ -1,0 +1,1142 @@
+/* ========================================================
+   MENUSCAN – PARCOURS D'INSCRIPTION & TARIFICATION OFFICIELLE
+   Styles pour inscription.html
+   ======================================================== */
+
+:root {
+  --ink: #1e2924;
+  --ink-secondary: #4b5d52;
+  --ink-muted: #6e7f74;
+  --bg-page: #f8faf7;
+  --bg-card: #ffffff;
+  --border-card: #e4ebe4;
+  --border-focus: #e8600a;
+  --color-primary: #e8600a;
+  --color-primary-light: #fff3ec;
+  --color-primary-hover: #d25304;
+  --color-accent-green: #25d366;
+  --color-accent-green-hover: #1ebd5a;
+  --color-badge-rec: #1e4d2b;
+  --bg-badge-rec: #e7f4ea;
+  --shadow-card: 0 10px 30px rgba(27, 46, 34, 0.06);
+  --shadow-hover: 0 16px 40px rgba(27, 46, 34, 0.12);
+  --shadow-selected: 0 0 0 2px var(--color-primary), 0 16px 40px rgba(232, 96, 10, 0.15);
+  --radius-card: 20px;
+  --radius-btn: 100px;
+}
+
+body.inscription-page {
+  background-color: var(--bg-page);
+  color: var(--ink);
+  font-family: var(--font-body, "Inter", sans-serif);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Header / Top Navigation ── */
+.inscr-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-card);
+  padding: 14px 0;
+  transition: box-shadow 0.25s ease;
+}
+
+.inscr-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.inscr-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.inscr-logo img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.inscr-nav-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--bg-badge-rec);
+  color: var(--color-badge-rec);
+  border: 1px solid #c9e4cd;
+}
+
+.inscr-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.inscr-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  padding: 8px 18px;
+  border-radius: var(--radius-btn);
+  background: #f1f4f1;
+  transition: all 0.2s ease;
+}
+
+.inscr-back-btn:hover {
+  background: #e5ece5;
+  color: var(--ink);
+  transform: translateX(-2px);
+}
+
+/* ── Hero Banner ── */
+.inscr-hero {
+  padding: 50px 0 30px;
+  text-align: center;
+}
+
+.inscr-hero .section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary-light);
+  border: 1.5px solid var(--orange-mid, #ffd0b5);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.inscr-hero-title {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.8px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.inscr-hero-title span {
+  color: var(--color-primary);
+}
+
+.inscr-hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--ink-secondary);
+  max-width: 680px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+
+/* ── Stepper / Progress Bar ── */
+.inscr-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inscr-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  background: #fff;
+  border: 1px solid var(--border-card);
+}
+
+.inscr-step.active {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(232, 96, 10, 0.12);
+}
+
+.inscr-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.06);
+  font-size: 11px;
+}
+
+.inscr-step.active .inscr-step-num {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.inscr-step-sep {
+  color: var(--border-card);
+  font-size: 16px;
+}
+
+/* ── Period Selector (Durée) ── */
+.inscr-period-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 24px 28px;
+  margin-bottom: 36px;
+  box-shadow: var(--shadow-card);
+}
+
+.inscr-period-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.inscr-period-header h2 {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.inscr-period-header p {
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+
+.inscr-period-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.inscr-period-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  background: #f7faf7;
+  border: 1.5px solid var(--border-card);
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  text-align: center;
+  position: relative;
+}
+
+.inscr-period-btn:hover {
+  background: #ffffff;
+  border-color: #cbd8cf;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.inscr-period-btn.active {
+  background: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary), 0 8px 20px rgba(232, 96, 10, 0.12);
+}
+
+.inscr-period-btn-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.inscr-period-btn.active .inscr-period-btn-label {
+  color: var(--color-primary);
+}
+
+.inscr-period-btn-desc {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 3px;
+}
+
+.inscr-period-btn-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 100px;
+  margin-top: 6px;
+  background: #eef3ee;
+  color: var(--ink-secondary);
+}
+
+.inscr-period-btn.has-discount .inscr-period-btn-badge {
+  background: #dff5e5;
+  color: #17652c;
+  border: 1px solid #b5e7c2;
+}
+
+.inscr-period-btn.active.has-discount .inscr-period-btn-badge {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+.inscr-period-summary-bar {
+  margin-top: 18px;
+  padding: 12px 18px;
+  background: #f3f7f4;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-secondary);
+}
+
+.inscr-period-summary-bar svg {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ── Plans Grid (Les 3 Forfaits) ── */
+.inscr-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+  align-items: stretch;
+}
+
+.inscr-plan-card {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+
+.inscr-plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: #cbd8cf;
+}
+
+.inscr-plan-card.is-selected {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-selected);
+  background: linear-gradient(180deg, #fffcfb 0%, #ffffff 100%);
+}
+
+/* Badge Recommandé pour Pro */
+.inscr-plan-card.is-recommended {
+  border-color: #78ab84;
+  background: linear-gradient(180deg, #f4faf5 0%, #ffffff 180px);
+}
+
+.inscr-plan-card.is-recommended.is-selected {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-selected);
+}
+
+.inscr-badge-rec {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #1b5329 0%, #2f7a42 100%);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 14px;
+  border-radius: 100px;
+  box-shadow: 0 4px 12px rgba(27, 83, 41, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.inscr-plan-badge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.inscr-plan-name {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.inscr-plan-desc {
+  font-size: 13px;
+  color: var(--ink-secondary);
+  line-height: 1.55;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+
+/* Pricing Display in Card */
+.inscr-plan-price-box {
+  background: #f7faf7;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #e7ede8;
+}
+
+.inscr-plan-card.is-selected .inscr-plan-price-box {
+  background: var(--color-primary-light);
+  border-color: var(--orange-mid, #ffd0b5);
+}
+
+.inscr-plan-price-total {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.inscr-plan-card.is-selected .inscr-plan-price-total {
+  color: var(--color-primary);
+}
+
+.inscr-plan-price-period {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.inscr-plan-discount-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  background: #dcf3e2;
+  color: #17652c;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.inscr-plan-base-rate {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 6px;
+}
+
+/* Highlights Grid */
+.inscr-plan-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.inscr-plan-highlight-item {
+  background: #ffffff;
+  border: 1px solid #edf1ee;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.inscr-highlight-value {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.inscr-highlight-label {
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+/* Plan Features List */
+.inscr-plan-features {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  flex: 1;
+}
+
+.inscr-plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.inscr-plan-features li svg {
+  color: #2e8b46;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.inscr-plan-features li strong {
+  color: var(--ink);
+}
+
+/* Accordion: Toutes les prestations */
+.inscr-plan-details {
+  border-top: 1px solid var(--border-card);
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.inscr-plan-details summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  cursor: pointer;
+  padding: 6px 0;
+  user-select: none;
+}
+
+.inscr-plan-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.inscr-plan-details summary svg {
+  transition: transform 0.2s ease;
+}
+
+.inscr-plan-details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+.inscr-plan-details-content {
+  padding-top: 12px;
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+.inscr-spec-table {
+  width: 100%;
+  margin-top: 8px;
+  border-collapse: collapse;
+}
+
+.inscr-spec-table tr {
+  border-bottom: 1px solid #f0f3f0;
+}
+
+.inscr-spec-table td {
+  padding: 6px 0;
+}
+
+.inscr-spec-table td:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* Select Plan Button */
+.inscr-select-plan-btn {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: var(--radius-btn);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f1f5f2;
+  color: var(--ink);
+  border: 1.5px solid transparent;
+}
+
+.inscr-select-plan-btn:hover {
+  background: #e4ebe5;
+}
+
+.inscr-plan-card.is-selected .inscr-select-plan-btn {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(232, 96, 10, 0.3);
+}
+
+/* ── Two Columns: Form & Summary ── */
+.inscr-main-columns {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  margin-bottom: 60px;
+  align-items: start;
+}
+
+/* ── Form Card ── */
+.inscr-form-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-card);
+}
+
+.inscr-form-header {
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.inscr-form-header h2 {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.inscr-form-header p {
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+
+.inscr-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.inscr-form-group.col-full {
+  grid-column: span 2;
+}
+
+.inscr-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.inscr-label .req {
+  color: #e8600a;
+  margin-left: 3px;
+}
+
+.inscr-label .opt {
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.inscr-input-wrapper {
+  position: relative;
+}
+
+.inscr-input,
+.inscr-select,
+.inscr-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border-card);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--ink);
+  background: #fff;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.inscr-input:hover,
+.inscr-select:hover,
+.inscr-textarea:hover {
+  border-color: #cbd8cf;
+}
+
+.inscr-input:focus,
+.inscr-select:focus,
+.inscr-textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(232, 96, 10, 0.12);
+}
+
+.inscr-input.is-invalid,
+.inscr-select.is-invalid,
+.inscr-textarea.is-invalid {
+  border-color: #dc3545;
+  background-color: #fff9f9;
+}
+
+.inscr-field-hint {
+  font-size: 11px;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+.inscr-field-error {
+  font-size: 12px;
+  color: #dc3545;
+  margin-top: 4px;
+  display: none;
+  align-items: center;
+  gap: 4px;
+}
+
+.inscr-input.is-invalid + .inscr-field-error,
+.inscr-input-wrapper:has(.inscr-input.is-invalid) + .inscr-field-error {
+  display: flex;
+}
+
+.inscr-textarea {
+  min-height: 85px;
+  resize: vertical;
+}
+
+/* ── Sticky Order Summary Card ── */
+.inscr-summary-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 32px 26px;
+  box-shadow: var(--shadow-card);
+  position: sticky;
+  top: 90px;
+}
+
+.inscr-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-card);
+}
+
+.inscr-summary-header h3 {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.inscr-summary-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.inscr-summary-rows {
+  margin-bottom: 20px;
+}
+
+.inscr-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  border-bottom: 1px dashed #edf1ee;
+}
+
+.inscr-summary-row:last-child {
+  border-bottom: none;
+}
+
+.inscr-summary-row strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.inscr-summary-row.discount-row {
+  color: #17652c;
+}
+
+.inscr-summary-row.discount-row strong {
+  color: #17652c;
+}
+
+.inscr-summary-total-box {
+  background: #f7faf7;
+  border: 1px solid #e0ebe2;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 18px 0 24px;
+  text-align: center;
+}
+
+.inscr-total-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--ink-muted);
+}
+
+.inscr-total-amount {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin: 6px 0;
+}
+
+.inscr-total-note {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  line-height: 1.4;
+}
+
+/* WhatsApp CTA Button */
+.inscr-whatsapp-btn {
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: var(--radius-btn);
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--color-accent-green);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: none;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  text-decoration: none;
+}
+
+.inscr-whatsapp-btn:hover {
+  background: var(--color-accent-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+}
+
+.inscr-whatsapp-btn:active {
+  transform: translateY(1px);
+}
+
+.inscr-whatsapp-btn svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.inscr-reassurance {
+  margin-top: 18px;
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.inscr-reassurance svg {
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Full Feature Comparison Table ── */
+.inscr-comparison-section {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 36px 32px;
+  margin-bottom: 50px;
+  box-shadow: var(--shadow-card);
+}
+
+.inscr-comparison-header {
+  margin-bottom: 24px;
+}
+
+.inscr-comparison-header h2 {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.inscr-comparison-header p {
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+
+.inscr-table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.inscr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  min-width: 600px;
+}
+
+.inscr-table th,
+.inscr-table td {
+  padding: 14px 18px;
+  border-top: 1px solid var(--border-card);
+  text-align: left;
+}
+
+.inscr-table thead th {
+  background: #f4f8f5;
+  font-weight: 700;
+  color: var(--ink);
+  border-top: none;
+  font-size: 14px;
+}
+
+.inscr-table thead th.is-recommended {
+  background: #eaf4ed;
+  color: #1b5329;
+}
+
+.inscr-table tbody th {
+  font-weight: 600;
+  color: var(--ink);
+  width: 35%;
+}
+
+.inscr-table tbody td.is-recommended {
+  background: #fafdfa;
+  font-weight: 600;
+}
+
+/* ── FAQ Section ── */
+.inscr-faq-section {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  padding: 36px 32px;
+  margin-bottom: 60px;
+  box-shadow: var(--shadow-card);
+}
+
+.inscr-faq-header {
+  margin-bottom: 24px;
+}
+
+.inscr-faq-header h2 {
+  font-family: var(--font-head, "Outfit", sans-serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.inscr-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.inscr-faq-item {
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 16px 18px;
+  background: #fbfdfb;
+  transition: all 0.2s ease;
+}
+
+.inscr-faq-item[open] {
+  background: #ffffff;
+  border-color: #cbd8cf;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.inscr-faq-item summary {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.inscr-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.inscr-faq-item summary svg {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  color: var(--ink-muted);
+}
+
+.inscr-faq-item[open] summary svg {
+  transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+.inscr-faq-item p {
+  font-size: 13px;
+  color: var(--ink-secondary);
+  line-height: 1.65;
+  margin-top: 10px;
+}
+
+/* ── Toast Notification ── */
+.inscr-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: 420px;
+  padding: 16px 20px;
+  border-radius: 14px;
+  background: #1b2e23;
+  color: #fff;
+  font-size: 13px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+}
+
+.inscr-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.inscr-toast svg {
+  color: var(--color-accent-green);
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Responsive Adaptations ── */
+@media (max-width: 1024px) {
+  .inscr-plans-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .inscr-main-columns {
+    grid-template-columns: 1fr;
+  }
+  
+  .inscr-summary-card {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .inscr-period-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .inscr-form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .inscr-form-group.col-full {
+    grid-column: span 1;
+  }
+  
+  .inscr-faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .inscr-form-card,
+  .inscr-comparison-section,
+  .inscr-faq-section,
+  .inscr-period-wrapper {
+    padding: 22px 18px;
+  }
+  
+  .inscr-stepper {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  
+  .inscr-step {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inscr-hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .inscr-period-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .inscr-total-amount {
+    font-size: 1.9rem;
+  }
+}

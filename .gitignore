@@ -12,3 +12,9 @@ Desktop.ini
 
 # Local logs
 *.log
+
+# Root temp images & exports
+/4-Photoroom.png
+/159165430*
+/ChatGPT*
+/Tarification*

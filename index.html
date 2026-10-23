@@ -21,7 +21,7 @@
         <img src="images/logo.png" alt="Menu Scan" />
       </a>
       <div class="nav-cta">
-        <a href="#contact" class="btn btn-primary btn-sm" id="nav-cta-btn">
+        <a href="inscription.html" class="btn btn-primary btn-sm" id="nav-cta-btn">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           Digitaliser mon menu
         </a>
@@ -41,7 +41,7 @@
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         Découvrir la solution
       </a>
-      <a href="#contact" class="btn btn-outline" id="hero-partner-btn">
+      <a href="inscription.html" class="btn btn-outline" id="hero-partner-btn">
         Devenir partenaire
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -72,17 +72,14 @@
 
           <!-- Écran intérieur du téléphone : diaporama animé avec transitions PowerPoint -->
           <div class="phone-screen" id="phoneScreen">
-            <div class="phone-slide is-active" data-index="0" role="tabpanel" aria-label="Menu Saveurs d'Afrique">
-              <img src="images/menu_africain.jpg" alt="Menu Saveurs d'Afrique" loading="eager" />
+            <div class="phone-slide is-active" data-index="0" role="tabpanel" aria-label="Menu Le Méchoui">
+              <img src="images/menu_mechoui.png" alt="Menu Le Méchoui" loading="eager" />
             </div>
-            <div class="phone-slide" data-index="1" role="tabpanel" aria-label="Menu Urban Burger Co.">
-              <img src="images/menu_burger.jpg" alt="Menu Urban Burger Co." loading="lazy" />
+            <div class="phone-slide" data-index="1" role="tabpanel" aria-label="Menu Rico Café">
+              <img src="images/menu_rico.png" alt="Menu Rico Café" loading="lazy" />
             </div>
-            <div class="phone-slide" data-index="2" role="tabpanel" aria-label="Menu Le Jardin Gastronomique">
-              <img src="images/menu_gastro.jpg" alt="Menu Le Jardin Gastronomique" loading="lazy" />
-            </div>
-            <div class="phone-slide" data-index="3" role="tabpanel" aria-label="Menu Café Lumière">
-              <img src="images/menu_cafe.jpg" alt="Menu Café Lumière" loading="lazy" />
+            <div class="phone-slide" data-index="2" role="tabpanel" aria-label="Menu Le Roi du Poulet">
+              <img src="images/menu_roi_poulet.png" alt="Menu Le Roi du Poulet" loading="lazy" />
             </div>
             <!-- Reflet d'écran haut de gamme -->
             <div class="phone-glare" aria-hidden="true"></div>
@@ -101,14 +98,13 @@
     <!-- Contrôles et indicateur en dessous du smartphone -->
     <div class="phone-bottom-bar">
       <div class="phone-dots" id="phoneDots" role="tablist" aria-label="Navigation des menus">
-        <button class="phone-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Saveurs d'Afrique"></button>
-        <button class="phone-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Urban Burger Co."></button>
-        <button class="phone-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Le Jardin Gastronomique"></button>
-        <button class="phone-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Café Lumière"></button>
+        <button class="phone-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Le Méchoui"></button>
+        <button class="phone-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Rico Café"></button>
+        <button class="phone-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Le Roi du Poulet"></button>
       </div>
       <div class="phone-active-label" id="phoneActiveLabel">
         <span class="live-indicator"></span>
-        <strong id="restaurantTitle">Saveurs d'Afrique</strong>
+        <strong id="restaurantTitle">Le Méchoui</strong>
       </div>
     </div>
 
@@ -152,57 +148,94 @@
   <div class="container">
     <div class="partners-header text-center reveal">
       <h2 class="section-title">Ils ont choisi Menu Scan</h2>
-      <p class="section-subtitle">Découvrez les restaurants qui ont digitalisé leur menu. Les exemples ci-dessous sont illustratifs — vos vrais menus seront intégrés après confirmation.</p>
+      <p class="section-subtitle">Découvrez les restaurants partenaires qui font confiance à Menu Scan pour offrir une expérience digitale d'exception à leurs clients.</p>
     </div>
     <div class="partners-grid">
 
+      <!-- Le Méchoui -->
       <article class="partner-card reveal reveal-delay-1">
-        <div class="partner-card-image">
-          <img src="images/restaurant_africain.jpg" alt="Restaurant Saveurs d'Afrique" loading="lazy" />
-          <span class="partner-badge">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M18 2v20M18 8a3 3 0 0 0 3-3V2h-6v3a3 3 0 0 0 3 3zM6 2v20M3 2v6a3 3 0 0 0 6 0V2"/></svg>
-            Cuisine africaine
-          </span>
-        </div>
-        <div class="partner-card-body">
-          <h3 class="partner-card-name">Saveurs d'Afrique</h3>
-          <p class="partner-card-desc">Restaurant authentique proposant les meilleures spécialités d'Afrique de l'Ouest : thiéboudienne, poulet yassa, attiéké et bien plus encore.</p>
-        </div>
-      </article>
-
-      <article class="partner-card reveal reveal-delay-2">
-        <div class="partner-card-image">
-          <img src="images/restaurant_burger.jpg" alt="Restaurant Urban Burger Co." loading="lazy" />
-          <span class="partner-badge">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M4 11a8 8 0 0 1 16 0H4zm-1 3.5h18M4 17.5h16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/></svg>
-            Burgers
-          </span>
-        </div>
-        <div class="partner-card-body">
-          <h3 class="partner-card-name">Urban Burger Co.</h3>
-          <p class="partner-card-desc">Le meilleur du burger artisanal : smash burgers, burgers au poulet croustillant, combos et sides. Une expérience gourmande unique.</p>
-        </div>
-      </article>
-
-      <article class="partner-card reveal reveal-delay-3" style="background: linear-gradient(135deg, #f8f8f8, #f0f0f0);">
-        <div class="partner-card-image" style="background: linear-gradient(135deg, #FFF3EC, #FFE0CC); display:flex; align-items:center; justify-content:center; height:220px;">
-          <div style="text-align:center; padding:24px;">
-            <div style="width:80px;height:80px;background:rgba(255,255,255,.8);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:3px dashed #E8600A;">
-              <svg width="36" height="36" fill="none" stroke="#E8600A" stroke-width="2" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-            </div>
-            <p style="color:#E8600A;font-weight:700;font-size:15px;">Votre restaurant ici</p>
+        <div class="partner-card-image partner-mechoui-bg">
+          <div class="partner-logo-overlay">
+            <img src="images/menu_mechoui.png" alt="Menu Le Méchoui" loading="lazy" class="partner-bg-img" />
           </div>
-          <span class="partner-badge">
-            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="partner-logo-badge">
+            <div class="partner-logo-circle mechoui-logo">
+              <span class="partner-logo-text mechoui-text">مشوى</span>
+              <span class="partner-logo-sub">le méchoui</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="partner-card-body">
+          <h3 class="partner-card-name">Le Méchoui</h3>
+          <p class="partner-card-desc">Maison fondée en 1990. Restaurant libanais & oriental proposant mezzés, grillades au feu de bois, thiéboudienne et spécialités du Liban.</p>
+        </div>
+      </article>
+
+      <!-- Rico Café -->
+      <article class="partner-card reveal reveal-delay-2">
+        <div class="partner-card-image partner-rico-bg">
+          <div class="partner-logo-overlay">
+            <img src="images/menu_rico.png" alt="Menu Rico Café" loading="lazy" class="partner-bg-img" />
+          </div>
+          <div class="partner-logo-badge">
+            <div class="partner-logo-circle rico-logo">
+              <img src="images/logo_rico_cafe.webp" alt="Logo Rico Café" loading="lazy" />
+            </div>
+          </div>
+
+
+        </div>
+        <div class="partner-card-body">
+          <h3 class="partner-card-name">Rico Café</h3>
+          <p class="partner-card-desc">Café restaurant au style vintage proposant sandwichs, burgers artisanaux, entrées froides & chaudes dans une ambiance chaleureuse et unique.</p>
+        </div>
+      </article>
+
+      <!-- Le Roi du Poulet -->
+      <article class="partner-card reveal reveal-delay-3">
+        <div class="partner-card-image partner-roi-bg">
+          <div class="partner-logo-overlay">
+            <img src="images/menu_roi_poulet.png" alt="Menu Le Roi du Poulet" loading="lazy" class="partner-bg-img" />
+          </div>
+          <div class="partner-logo-badge">
+            <div class="partner-logo-circle roi-logo">
+              <img src="images/logo_roi_poulet.png" alt="Logo Le Roi du Poulet" loading="lazy" />
+            </div>
+          </div>
+
+        </div>
+        <div class="partner-card-body">
+          <h3 class="partner-card-name">Le Roi du Poulet</h3>
+          <p class="partner-card-desc">Spécialiste du chawarma, poulet grillé & libanais. Des recettes savoureuses, généreuses et préparées avec passion pour satisfaire toutes vos envies.</p>
+        </div>
+      </article>
+
+      <!-- Votre établissement (Appel à partenaire) -->
+      <article class="partner-card partner-card-cta reveal reveal-delay-4">
+        <div class="partner-card-image partner-cta-image">
+          <span class="partner-cta-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
             Prochainement
           </span>
+          <div class="partner-cta-center">
+            <div class="partner-cta-circle">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </div>
+            <span class="partner-cta-text">Votre restaurant ici</span>
+          </div>
         </div>
         <div class="partner-card-body">
           <h3 class="partner-card-name">Votre établissement</h3>
           <p class="partner-card-desc">Cette carte est réservée pour le prochain restaurant partenaire. Rejoignez Menu Scan et bénéficiez d'un menu numérique professionnel en quelques jours.</p>
-          <div class="partner-card-footer">
-            <a href="#contact" class="btn btn-primary">Rejoindre Menu Scan</a>
-          </div>
+          <a href="inscription.html" class="btn btn-primary partner-cta-btn" id="btn-rejoindre-menuscan">
+            Rejoindre Menu Scan
+          </a>
         </div>
       </article>
 
@@ -247,7 +280,7 @@
       <div class="advantages-visual reveal">
         <div class="adv-phone-mini">
           <div class="adv-phone-mini-screen">
-            <img src="images/menu_africain.jpg" alt="Aperçu menu numérique" loading="lazy" />
+            <img src="images/menu_rico.png" alt="Aperçu menu numérique Rico Café" loading="lazy" />
           </div>
         </div>
         <div class="adv-floating-badge">
@@ -324,25 +357,12 @@
       <h2 class="cta-title">Prêt à faire passer votre restaurant<br /><span>au numérique ?</span></h2>
       <p class="cta-subtitle">Rejoignez Menu Scan et offrez à vos clients une expérience de consultation moderne, rapide et sans friction.</p>
       <div class="cta-buttons">
-        <a href="https://wa.me/+221000000000" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="cta-whatsapp-btn">
+        <a href="inscription.html" class="btn btn-primary" id="cta-whatsapp-btn">
           <svg fill="currentColor" width="18" height="18" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.113 1.524 5.843L.057 23.286c-.1.315.014.656.274.856.26.2.614.224.899.061L6.571 22.5C8.276 23.463 10.076 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.805 0-3.539-.476-5.044-1.314l-.361-.21-3.741.979.999-3.645-.229-.375A9.932 9.932 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           Contacter sur WhatsApp
         </a>
       </div>
-      <div class="cta-contacts">
-        <a href="mailto:contact@menuscan.com" class="cta-contact-item" id="contact-email">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          contact@menuscan.com <small style="opacity:.5;margin-left:4px">(à configurer)</small>
-        </a>
-        <a href="https://wa.me/+221000000000" target="_blank" rel="noopener noreferrer" class="cta-contact-item" id="contact-whatsapp">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.78-.78a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          WhatsApp professionnel <small style="opacity:.5;margin-left:4px">(à configurer)</small>
-        </a>
-        <a href="#" class="cta-contact-item" id="contact-instagram">
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          @menuscan <small style="opacity:.5;margin-left:4px">(à configurer)</small>
-        </a>
-      </div>
+
     </div>
   </div>
 </section>
@@ -354,16 +374,19 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="images/logo.png" alt="Menu Scan" class="footer-brand-logo" />
+        <img src="images/logo_white.png" alt="Menu Scan" class="footer-brand-logo" />
         <p class="footer-brand-desc">Menu Scan digitalise les menus des restaurants grâce à des QR codes modernes, permettant à vos clients de consulter votre carte instantanément sur smartphone.</p>
         <div class="footer-socials">
           <a href="#" class="social-btn" aria-label="Instagram">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
-          <a href="#" class="social-btn" aria-label="Facebook">
+          <a href="https://www.facebook.com/share/r/14tLhK4Bgeu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook Menu Scan">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           </a>
-          <a href="https://wa.me/+221000000000" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+          <a href="https://www.tiktok.com/@menuscan.ci" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok @menuscan.ci">
+            <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.09a8.16 8.16 0 0 0 4.77 1.52V7.17a4.85 4.85 0 0 1-1-.48z"/></svg>
+          </a>
+          <a href="inscription.html" class="social-btn" aria-label="WhatsApp">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.113 1.524 5.843L.057 23.286c-.1.315.014.656.274.856.26.2.614.224.899.061L6.571 22.5C8.276 23.463 10.076 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.805 0-3.539-.476-5.044-1.314l-.361-.21-3.741.979.999-3.645-.229-.375A9.932 9.932 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
           </a>
         </div>
@@ -385,7 +408,8 @@
           <a href="#contact">Digitalisation de menu</a>
           <a href="#contact">Création QR Code</a>
           <a href="#contact">Mise à jour menu</a>
-          <a href="#contact">Devenir partenaire</a>
+          <a href="inscription.html">Devenir partenaire</a>
+          <a href="inscription.html">Tarifs & Inscription</a>
           <a href="#contact">Support</a>
         </nav>
       </div>
@@ -393,15 +417,15 @@
         <h4 class="footer-col-title">Contact</h4>
         <div class="footer-contact-item">
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:contact@menuscan.com">contact@menuscan.com</a>
+          <a href="mailto:menuscanci@gmail.com">menuscanci@gmail.com</a>
         </div>
         <div class="footer-contact-item">
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.38.266.75.42 1.1L9 6.4a16 16 0 0 0 6 6l.78-.78a2 2 0 0 1 2.11-.45c.35.154.72.293 1.1.42A2 2 0 0 1 22 16.92z"/></svg>
-          <span>WhatsApp pro (à configurer)</span>
+          <a href="inscription.html">+225 07 77 95 98 48</a>
         </div>
         <div class="footer-contact-item">
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>Dakar, Sénégal</span>
+          <span>Abidjan, Côte d'Ivoire</span>
         </div>
       </div>
     </div>

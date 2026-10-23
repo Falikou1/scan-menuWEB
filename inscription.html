@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rejoignez MenuScan · Tarification & Inscription Commerciale</title>
+  <meta name="description" content="Inscrivez votre restaurant à MenuScan : choisissez votre forfait (Business, Pro, Prestige) et votre durée d'abonnement, puis contactez notre équipe sur WhatsApp avec vos sélections." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="inscription.css" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+</head>
+<body class="inscription-page">
+
+  <!-- TOPBAR / NAVIGATION -->
+  <header class="inscr-header">
+    <div class="container inscr-nav">
+      <div class="inscr-nav-left">
+        <a href="index.html" class="inscr-logo" aria-label="MenuScan – Retour à l'accueil">
+          <img src="images/logo.png" alt="MenuScan" />
+        </a>
+        <span class="inscr-nav-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Catalogue & Tarifs Officiels
+        </span>
+      </div>
+      <div class="inscr-nav-right">
+        <a href="index.html#partenaires" class="inscr-back-btn">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <span>Retour au site</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- HERO HEADER -->
+    <section class="inscr-hero">
+
+      <h1 class="inscr-hero-title">Rejoignez <span>MenuScan</span></h1>
+      <p class="inscr-hero-subtitle">
+        Digitalisez le menu de votre établissement en toute simplicité. Comparez nos formules officielles, personnalisez votre durée d'abonnement avec remise immédiate, puis finalisez votre demande en direct sur WhatsApp avec notre équipe.
+      </p>
+
+      <!-- Stepper / Fil d'Ariane -->
+      <nav class="inscr-stepper" aria-label="Étapes de la demande">
+        <div class="inscr-step active">
+          <span class="inscr-step-num">1</span>
+          <span>Choix du forfait</span>
+        </div>
+        <span class="inscr-step-sep">›</span>
+        <div class="inscr-step active">
+          <span class="inscr-step-num">2</span>
+          <span>Durée & Infos</span>
+        </div>
+        <span class="inscr-step-sep">›</span>
+        <div class="inscr-step">
+          <span class="inscr-step-num">3</span>
+          <span>Contact WhatsApp</span>
+        </div>
+      </nav>
+    </section>
+
+    <!-- SECTION 1: SÉLECTEUR DE DURÉE -->
+    <section class="inscr-period-wrapper" aria-labelledby="periodSelectorTitle">
+      <div class="inscr-period-header">
+        <h2 id="periodSelectorTitle">1. Choisissez la durée de votre abonnement</h2>
+        <p>Plus votre engagement est long, plus votre économie est importante. Les prix couvrent toute la durée sélectionnée.</p>
+      </div>
+
+      <div class="inscr-period-grid" role="group" aria-label="Durée d'abonnement">
+        <button type="button" class="inscr-period-btn active" data-inscr-period="1" aria-pressed="true">
+          <span class="inscr-period-btn-label">Mensuel</span>
+          <span class="inscr-period-btn-desc">1 mois</span>
+          <span class="inscr-period-btn-badge">Plein tarif</span>
+        </button>
+
+        <button type="button" class="inscr-period-btn has-discount" data-inscr-period="3" aria-pressed="false">
+          <span class="inscr-period-btn-label">Trimestriel</span>
+          <span class="inscr-period-btn-desc">3 mois</span>
+          <span class="inscr-period-btn-badge">−5 % d'économie</span>
+        </button>
+
+        <button type="button" class="inscr-period-btn has-discount" data-inscr-period="6" aria-pressed="false">
+          <span class="inscr-period-btn-label">Semestriel</span>
+          <span class="inscr-period-btn-desc">6 mois</span>
+          <span class="inscr-period-btn-badge">−10 % d'économie</span>
+        </button>
+
+        <button type="button" class="inscr-period-btn has-discount" data-inscr-period="12" aria-pressed="false">
+          <span class="inscr-period-btn-label">Annuel</span>
+          <span class="inscr-period-btn-desc">12 mois</span>
+          <span class="inscr-period-btn-badge">−15 % d'économie</span>
+        </button>
+      </div>
+
+      <div class="inscr-period-summary-bar">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        <span id="inscrPeriodCaption">Prix pour 1 mois, sans engagement long. Préparation et saisie du menu incluses.</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2: GRILLE DES 3 FORFAITS OFFICIELS -->
+    <section class="inscr-plans-section" aria-labelledby="plansSectionTitle">
+      <h2 id="plansSectionTitle" class="visually-hidden" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Nos 3 forfaits</h2>
+
+      <div class="inscr-plans-grid">
+
+        <!-- BUSINESS -->
+        <article class="inscr-plan-card" id="planCard_business" aria-selected="false">
+          <div class="inscr-plan-badge-label">Forfait MenuScan</div>
+          <h3 class="inscr-plan-name">Business</h3>
+          <p class="inscr-plan-desc">Pour les snacks, cafés et petits restaurants avec une carte courte et peu de changements.</p>
+
+          <div class="inscr-plan-price-box">
+            <div class="inscr-plan-price-total" data-plan-total>15 000 FCFA</div>
+            <div class="inscr-plan-price-period" data-plan-period-label>pour 1 mois</div>
+            <div class="inscr-plan-discount-tag" data-plan-discount-tag style="display:none;"></div>
+            <div class="inscr-plan-base-rate" data-plan-base-rate>Tarif mensuel de base : 15 000 FCFA / mois</div>
+          </div>
+
+          <div class="inscr-plan-highlights">
+            <div class="inscr-plan-highlight-item">
+              <div class="inscr-highlight-value">30</div>
+              <div class="inscr-highlight-label">Plats & boissons max</div>
+            </div>
+            <div class="inscr-plan-highlight-item">
+              <div class="inscr-highlight-value">3</div>
+              <div class="inscr-highlight-label">Supports QR inclus</div>
+            </div>
+          </div>
+
+          <ul class="inscr-plan-features">
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>1 demande MenuScan / mois</strong> (délai 2 jours ouvrés, max 10 modifs)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Espace personnel autonome</strong> pour modifier votre carte à volonté</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Préparation & saisie intégrale de votre menu incluses</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Assistance WhatsApp standard</span>
+            </li>
+          </ul>
+
+          <details class="inscr-plan-details">
+            <summary>
+              <span>Toutes les prestations</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="inscr-plan-details-content">
+              <table class="inscr-spec-table">
+                <tr><td>Plats et boissons max</td><td>30</td></tr>
+                <tr><td>Supports QR à l'installation</td><td>3</td></tr>
+                <tr><td>Demandes MenuScan / mois</td><td>1 (10 modifs max)</td></tr>
+                <tr><td>Délai de traitement</td><td>2 jours ouvrés</td></tr>
+                <tr><td>Modifs en autonomie</td><td>Incluses sans quota</td></tr>
+                <tr><td>Assistance WhatsApp</td><td>Standard</td></tr>
+                <tr><td>Point de suivi</td><td>Aucun</td></tr>
+                <tr><td>Établissement couvert</td><td>1 restaurant</td></tr>
+              </table>
+            </div>
+          </details>
+
+          <button type="button" class="inscr-select-plan-btn" aria-label="Choisir le forfait Business">
+            Choisir Business
+          </button>
+        </article>
+
+        <!-- PRO (RECOMMANDÉ) -->
+        <article class="inscr-plan-card is-recommended is-selected" id="planCard_pro" aria-selected="true">
+          <div class="inscr-badge-rec">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Recommandé
+          </div>
+          <div class="inscr-plan-badge-label" style="color:#1e4d2b;">Forfait MenuScan</div>
+          <h3 class="inscr-plan-name">Pro</h3>
+          <p class="inscr-plan-desc">Pour les restaurants et brasseries avec une carte variée et des mises à jour régulières.</p>
+
+          <div class="inscr-plan-price-box">
+            <div class="inscr-plan-price-total" data-plan-total>25 000 FCFA</div>
+            <div class="inscr-plan-price-period" data-plan-period-label>pour 1 mois</div>
+            <div class="inscr-plan-discount-tag" data-plan-discount-tag style="display:none;"></div>
+            <div class="inscr-plan-base-rate" data-plan-base-rate>Tarif mensuel de base : 25 000 FCFA / mois</div>
+          </div>
+
+          <div class="inscr-plan-highlights">
+            <div class="inscr-plan-highlight-item">
+              <div class="inscr-highlight-value">150</div>
+              <div class="inscr-highlight-label">Plats & boissons max</div>
+            </div>
+            <div class="inscr-plan-highlight-item">
+              <div class="inscr-highlight-value">6</div>
+              <div class="inscr-highlight-label">Supports QR inclus</div>
+            </div>
+          </div>
+
+          <ul class="inscr-plan-features">
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>4 demandes MenuScan / mois</strong> (délai 1 jour ouvré, max 10 modifs)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Espace personnel autonome</strong> sans quota de modifications</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Préparation & saisie intégrale du menu par MenuScan</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Assistance WhatsApp <strong>prioritaire</strong> & point de suivi trimestriel</span>
+            </li>
+          </ul>
+
+          <details class="inscr-plan-details">
+            <summary>
+              <span>Toutes les prestations</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="inscr-plan-details-content">
+              <table class="inscr-spec-table">
+                <tr><td>Plats et boissons max</td><td>150</td></tr>
+                <tr><td>Supports QR à l'installation</td><td>6</td></tr>
+                <tr><td>Demandes MenuScan / mois</td><td>4 (10 modifs max)</td></tr>
+                <tr><td>Délai de traitement</td><td>1 jour ouvré</td></tr>
+                <tr><td>Modifs en autonomie</td><td>Incluses sans quota</td></tr>
+                <tr><td>Assistance WhatsApp</td><td>Prioritaire</td></tr>
+                <tr><td>Point de suivi</td><td>Trimestriel</td></tr>
+                <tr><td>Établissement couvert</td><td>1 restaurant</td></tr>
+              </table>
+            </div>
+          </details>
+
+          <button type="button" class="inscr-select-plan-btn" aria-label="Choisir le forfait Pro">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+            Forfait sélectionné
+          </button>
+        </article>
+
+        <!-- PRESTIGE -->
+        <article class="inscr-plan-card" id="planCard_prestige" aria-selected="false">
+          <div class="inscr-plan-badge-label">Forfait MenuScan</div>
+          <h3 class="inscr-plan-name">Prestige</h3>
+          <p class="inscr-plan-desc">Pour les grands restaurants et hôtels avec une carte étendue et un accompagnement fréquent.</p>
+
+          <div class="inscr-plan-price-box">
+            <div class="inscr-plan-price-total" data-plan-total>50 000 FCFA</div>
+            <div class="inscr-plan-price-period" data-plan-period-label>pour 1 mois</div>
+            <div class="inscr-plan-discount-tag" data-plan-discount-tag style="display:none;"></div>
+            <div class="inscr-plan-base-rate" data-plan-base-rate>Tarif mensuel de base : 50 000 FCFA / mois</div>
+          </div>
+
+          <div class="inscr-plan-highlights">
+            <div class="inscr-plan-highlight-item">
+              <div class="inscr-highlight-value">500</div>
+              <div class="inscr-highlight-label">Plats & boissons max</div>
+            </div>
+            <div class="inscr-plan-highlight-item">
+              <div class="inscr-highlight-value">15</div>
+              <div class="inscr-highlight-label">Supports QR inclus</div>
+            </div>
+          </div>
+
+          <ul class="inscr-plan-features">
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>8 demandes MenuScan / mois</strong> (traitement express : <strong>4 heures ouvrées</strong>)</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Espace personnel autonome</strong> sans quota</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Préparation & saisie intégrale du menu</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Interlocuteur référent dédié & suivi mensuel</span>
+            </li>
+          </ul>
+
+          <details class="inscr-plan-details">
+            <summary>
+              <span>Toutes les prestations</span>
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="inscr-plan-details-content">
+              <table class="inscr-spec-table">
+                <tr><td>Plats et boissons max</td><td>500</td></tr>
+                <tr><td>Supports QR à l'installation</td><td>15</td></tr>
+                <tr><td>Demandes MenuScan / mois</td><td>8 (10 modifs max)</td></tr>
+                <tr><td>Délai de traitement</td><td>4 heures ouvrées</td></tr>
+                <tr><td>Modifs en autonomie</td><td>Incluses sans quota</td></tr>
+                <tr><td>Assistance WhatsApp</td><td>Interlocuteur référent</td></tr>
+                <tr><td>Point de suivi</td><td>Mensuel</td></tr>
+                <tr><td>Établissement couvert</td><td>1 restaurant</td></tr>
+              </table>
+            </div>
+          </details>
+
+          <button type="button" class="inscr-select-plan-btn" aria-label="Choisir le forfait Prestige">
+            Choisir Prestige
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: FORMULAIRE & RÉCAPITULATIF STICKY -->
+    <section class="inscr-main-columns" aria-labelledby="formSectionTitle">
+
+      <!-- Formulaire d'information du restaurant -->
+      <div class="inscr-form-card">
+        <div class="inscr-form-header">
+          <h2 id="formSectionTitle">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/></svg>
+            2. Informations de votre établissement
+          </h2>
+          <p>Ces données permettront à notre équipe commerciale de préparer votre dossier d'inscription avant de vous répondre.</p>
+        </div>
+
+        <form id="restaurantForm" novalidate onsubmit="return false;">
+          <div class="inscr-form-grid">
+
+            <!-- Nom de l'établissement -->
+            <div class="inscr-form-group col-full">
+              <label for="inscrRestaurantName" class="inscr-label">
+                Nom du restaurant ou de l’établissement <span class="req">*</span>
+              </label>
+              <div class="inscr-input-wrapper">
+                <input type="text" id="inscrRestaurantName" class="inscr-input" placeholder="Ex: Le Méchoui, Rico Café, Le Roi du Poulet..." required autocomplete="organization" />
+              </div>
+              <div class="inscr-field-error">Veuillez indiquer le nom de votre établissement.</div>
+            </div>
+
+            <!-- Nom du responsable -->
+            <div class="inscr-form-group">
+              <label for="inscrOwnerName" class="inscr-label">
+                Nom & Prénom du responsable <span class="req">*</span>
+              </label>
+              <div class="inscr-input-wrapper">
+                <input type="text" id="inscrOwnerName" class="inscr-input" placeholder="Ex: Jean Kouassi, Amadou Diallo..." required autocomplete="name" />
+              </div>
+              <div class="inscr-field-error">Veuillez indiquer le nom du responsable.</div>
+            </div>
+
+            <!-- Numéro WhatsApp -->
+            <div class="inscr-form-group">
+              <label for="inscrPhone" class="inscr-label">
+                Téléphone ou WhatsApp <span class="req">*</span>
+              </label>
+              <div class="inscr-input-wrapper">
+                <input type="tel" id="inscrPhone" class="inscr-input" placeholder="Ex: +225 07 00 00 00 00" required autocomplete="tel" />
+              </div>
+              <div class="inscr-field-error">Veuillez renseigner un numéro valide.</div>
+            </div>
+
+            <!-- Ville ou commune -->
+            <div class="inscr-form-group">
+              <label for="inscrCity" class="inscr-label">
+                Ville ou commune <span class="req">*</span>
+              </label>
+              <div class="inscr-input-wrapper">
+                <input type="text" id="inscrCity" class="inscr-input" placeholder="Ex: Abidjan (Cocody, Plateau), Dakar, etc." required />
+              </div>
+              <div class="inscr-field-error">Veuillez indiquer la ville ou la commune.</div>
+            </div>
+
+            <!-- Type d'établissement (optionnel) -->
+            <div class="inscr-form-group">
+              <label for="inscrRestaurantType" class="inscr-label">
+                Type d’établissement <span class="opt">(facultatif)</span>
+              </label>
+              <div class="inscr-input-wrapper">
+                <select id="inscrRestaurantType" class="inscr-select">
+                  <option value="">Sélectionner une catégorie...</option>
+                  <option value="Restaurant traditionnel">Restaurant traditionnel</option>
+                  <option value="Fast-food / Snack">Fast-food / Snack / Street-food</option>
+                  <option value="Café / Salon de thé">Café / Salon de thé / Bakery</option>
+                  <option value="Bar / Lounge / Rooftop">Bar / Lounge / Rooftop</option>
+                  <option value="Hôtel & Restaurant">Hôtel & Restaurant</option>
+                  <option value="Pâtisserie / Glacier">Pâtisserie / Glacier</option>
+                  <option value="Autre établissement">Autre établissement</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message complémentaire -->
+            <div class="inscr-form-group col-full">
+              <label for="inscrNotes" class="inscr-label">
+                Message complémentaire ou besoin particulier <span class="opt">(facultatif)</span>
+              </label>
+              <div class="inscr-input-wrapper">
+                <textarea id="inscrNotes" class="inscr-textarea" placeholder="Ex: Nombre de tables, besoin de supports supplémentaires, carte multilingue, délai souhaité..."></textarea>
+              </div>
+              <div class="inscr-field-hint">Vos informations sont sauvegardées automatiquement lors de vos changements de formule ou de durée.</div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+      <!-- Récapitulatif Sticky & Action WhatsApp -->
+      <aside class="inscr-summary-card" aria-labelledby="summaryCardTitle">
+        <div class="inscr-summary-header">
+          <h3 id="summaryCardTitle">Récapitulatif de votre demande</h3>
+          <span class="inscr-summary-badge" id="summaryPlanBadge">★ Recommandé</span>
+        </div>
+
+        <div class="inscr-summary-rows">
+          <div class="inscr-summary-row">
+            <span>Établissement</span>
+            <span id="summaryRestaurantInfo"><span style="color:var(--ink-muted);font-style:italic;">À renseigner ci-contre</span></span>
+          </div>
+          <div class="inscr-summary-row">
+            <span>Forfait sélectionné</span>
+            <strong id="summaryPlanName">Pro</strong>
+          </div>
+          <div class="inscr-summary-row">
+            <span>Durée d'abonnement</span>
+            <strong id="summaryDuration">1 mois (Mensuel)</strong>
+          </div>
+          <div class="inscr-summary-row">
+            <span>Tarif mensuel de base</span>
+            <strong id="summaryBaseMonthly">25 000 FCFA / mois</strong>
+          </div>
+          <div class="inscr-summary-row" id="summaryDiscountRow" style="display:none;">
+            <span>Réduction appliquée (<span id="summaryDiscountPercent">−10 %</span>)</span>
+            <strong id="summaryDiscountAmount">−0 FCFA</strong>
+          </div>
+        </div>
+
+        <!-- Boîte du Total -->
+        <div class="inscr-summary-total-box">
+          <div class="inscr-total-label">Montant total pour la période</div>
+          <div class="inscr-total-amount" id="summaryFinalTotal">25 000 FCFA</div>
+          <div class="inscr-total-note" id="summaryTotalNote">
+            Montant pour 1 mois. Préparation et saisie du menu incluses.
+          </div>
+        </div>
+
+        <!-- Bouton WhatsApp -->
+        <button type="button" id="inscrSubmitWhatsApp" class="inscr-whatsapp-btn" aria-label="Continuer sur WhatsApp pour finaliser l'inscription">
+          <svg fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.113 1.524 5.843L.057 23.286c-.1.315.014.656.274.856.26.2.614.224.899.061L6.571 22.5C8.276 23.463 10.076 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.805 0-3.539-.476-5.044-1.314l-.361-.21-3.741.979.999-3.645-.229-.375A9.932 9.932 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Continuer sur WhatsApp
+        </button>
+
+        <div class="inscr-reassurance">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>
+            <strong>Prise de contact directe et gratuite.</strong> Aucun paiement immédiat n'est exigé en ligne. Le message s'ouvrira prérempli dans WhatsApp et vous pourrez échanger avec notre conseiller avant toute validation.
+          </span>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- SECTION 4: TABLEAU COMPARATIF DÉTAILLÉ -->
+    <section class="inscr-comparison-section" aria-labelledby="compSectionTitle">
+      <div class="inscr-comparison-header">
+        <h2 id="compSectionTitle">Comparatif officiel des formules</h2>
+        <p>Les quantités indiquées couvrent un établissement. La préparation initiale et la saisie de votre menu sont toujours comprises.</p>
+      </div>
+
+      <div class="inscr-table-scroll" tabindex="0" role="region" aria-label="Tableau comparatif des forfaits">
+        <table class="inscr-table">
+          <thead>
+            <tr>
+              <th scope="col">Prestations</th>
+              <th scope="col">Business</th>
+              <th scope="col" class="is-recommended">Pro (Recommandé)</th>
+              <th scope="col">Prestige</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Tarif mensuel de base</th>
+              <td>15 000 FCFA</td>
+              <td class="is-recommended">25 000 FCFA</td>
+              <td>50 000 FCFA</td>
+            </tr>
+            <tr>
+              <th scope="row">Plats et boissons maximum</th>
+              <td>30</td>
+              <td class="is-recommended">150</td>
+              <td>500</td>
+            </tr>
+            <tr>
+              <th scope="row">Supports QR remis à l’installation</th>
+              <td>3 supports</td>
+              <td class="is-recommended">6 supports</td>
+              <td>15 supports</td>
+            </tr>
+            <tr>
+              <th scope="row">Demandes confiées à MenuScan / mois</th>
+              <td>1 demande (max 10 modifs)</td>
+              <td class="is-recommended">4 demandes (max 10 modifs)</td>
+              <td>8 demandes (max 10 modifs)</td>
+            </tr>
+            <tr>
+              <th scope="row">Délai de traitement</th>
+              <td>2 jours ouvrés</td>
+              <td class="is-recommended">1 jour ouvré</td>
+              <td>4 heures ouvrées</td>
+            </tr>
+            <tr>
+              <th scope="row">Modifications par le restaurant</th>
+              <td>Incluses, sans quota</td>
+              <td class="is-recommended">Incluses, sans quota</td>
+              <td>Incluses, sans quota</td>
+            </tr>
+            <tr>
+              <th scope="row">Assistance WhatsApp</th>
+              <td>Standard</td>
+              <td class="is-recommended">Prioritaire</td>
+              <td>Interlocuteur référent</td>
+            </tr>
+            <tr>
+              <th scope="row">Point de suivi</th>
+              <td>Aucun</td>
+              <td class="is-recommended">Trimestriel</td>
+              <td>Mensuel</td>
+            </tr>
+            <tr>
+              <th scope="row">Support QR supplémentaire à l'unité</th>
+              <td>3 000 FCFA</td>
+              <td class="is-recommended">3 000 FCFA</td>
+              <td>3 000 FCFA</td>
+            </tr>
+            <tr>
+              <th scope="row">Préparation et saisie du menu</th>
+              <td>Incluses</td>
+              <td class="is-recommended">Incluses</td>
+              <td>Incluses</td>
+            </tr>
+            <tr>
+              <th scope="row">QR code permanent (sans réimpression)</th>
+              <td>Inclus</td>
+              <td class="is-recommended">Inclus</td>
+              <td>Inclus</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 5: QUESTIONS FRÉQUENTES (FAQ) -->
+    <section class="inscr-faq-section" aria-labelledby="faqSectionTitle">
+      <div class="inscr-faq-header">
+        <h2 id="faqSectionTitle">Questions fréquentes des restaurateurs</h2>
+        <p>Toutes les réponses pour démarrer votre projet de digitalisation en toute sérénité.</p>
+      </div>
+
+      <div class="inscr-faq-grid">
+        <details class="inscr-faq-item">
+          <summary>
+            <span>Comment les clients consultent-ils le menu ?</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Ils scannent simplement le QR code posé sur la table ou le comptoir avec leur téléphone portable et la carte s'ouvre directement dans leur navigateur. Aucune application à télécharger ; une simple connexion Internet suffit.</p>
+        </details>
+
+        <details class="inscr-faq-item">
+          <summary>
+            <span>Faut-il réimprimer le QR code après une mise à jour ?</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Non. Le QR code conserve exactement la même adresse lorsque vos prix, vos plats ou vos photos sont modifiés. Vous n'avez jamais besoin de réimprimer vos supports de table.</p>
+        </details>
+
+        <details class="inscr-faq-item">
+          <summary>
+            <span>Puis-je modifier mon menu moi-même ?</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Oui. Dès la première mise en ligne, vous bénéficiez de votre espace personnel sécurisé pour modifier, ajouter ou masquer vos plats, boissons et prix en parfaite autonomie, sans décompte de vos demandes mensuelles.</p>
+        </details>
+
+        <details class="inscr-faq-item">
+          <summary>
+            <span>Comment fonctionne le règlement de l'abonnement ?</span>
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <p>Vous choisissez un règlement mensuel, trimestriel (-5%), semestriel (-10%) ou annuel (-15%). Le montant total affiché couvre toute la période choisie en un règlement unique. Le règlement est convenu avec notre équipe avant la mise en ligne officielle.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="inscrToast" class="inscr-toast" role="status" aria-live="polite">
+    <svg fill="currentColor" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+    </svg>
+    <span id="inscrToastMsg">Notification</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" aria-label="Pied de page">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="images/logo_white.png" alt="Menu Scan" class="footer-brand-logo" />
+          <p class="footer-brand-desc">Menu Scan digitalise les menus des restaurants grâce à des QR codes modernes, permettant à vos clients de consulter votre carte instantanément sur smartphone.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/r/14tLhK4Bgeu/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook Menu Scan">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@menuscan.ci" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="TikTok @menuscan.ci">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V9.09a8.16 8.16 0 0 0 4.77 1.52V7.17a4.85 4.85 0 0 1-1-.48z"/></svg>
+            </a>
+            <a href="https://wa.me/2250777959848" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+              <svg fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.122.555 4.113 1.524 5.843L.057 23.286c-.1.315.014.656.274.856.26.2.614.224.899.061L6.571 22.5C8.276 23.463 10.076 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.805 0-3.539-.476-5.044-1.314l-.361-.21-3.741.979.999-3.645-.229-.375A9.932 9.932 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <nav class="footer-links" aria-label="Navigation pied de page">
+            <a href="index.html#accueil">Accueil</a>
+            <a href="index.html#partenaires">Restaurants partenaires</a>
+            <a href="index.html#comment">Comment ça marche</a>
+            <a href="inscription.html">Tarifs & Inscription</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Offres</h4>
+          <nav class="footer-links" aria-label="Offres MenuScan">
+            <a href="inscription.html?plan=business">Forfait Business</a>
+            <a href="inscription.html?plan=pro">Forfait Pro (Recommandé)</a>
+            <a href="inscription.html?plan=prestige">Forfait Prestige</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Contact Commercial</h4>
+          <div class="footer-contact-item">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:menuscanci@gmail.com">menuscanci@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.35 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.38.266.75.42 1.1L9 6.4a16 16 0 0 0 6 6l.78-.78a2 2 0 0 1 2.11-.45c.35.154.72.293 1.1.42A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="https://wa.me/2250777959848" target="_blank" rel="noopener noreferrer">+225 07 77 95 98 48</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Menu Scan &middot; Tous droits réservés. Tarification officielle en FCFA.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="inscription.js"></script>
+</body>
+</html>

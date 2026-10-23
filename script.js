@@ -58,11 +58,11 @@ const prevBtn      = qs('#phonePrevBtn');
 const nextBtn      = qs('#phoneNextBtn');
 
 const RESTAURANT_DATA = [
-  { name: "Saveurs d'Afrique", tag: "Saveurs d'Afrique", price: "Dakar · 4 500 FCFA" },
-  { name: "Urban Burger Co.", tag: "Urban Burger Co.", price: "Burger · 5 200 FCFA" },
-  { name: "Le Jardin Gastronomique", tag: "Le Jardin Gastro", price: "Gourmet · 12 000 FCFA" },
-  { name: "Café Lumière", tag: "Café Lumière", price: "Brunch · 2 800 FCFA" }
+  { name: "Le Méchoui", tag: "Le Méchoui", price: "Libanais · Maison fondée en 1990" },
+  { name: "Rico Café", tag: "Rico Café", price: "Café & Snacking · Style vintage" },
+  { name: "Le Roi du Poulet", tag: "Le Roi du Poulet", price: "Fast-food libanais · Chawarma" }
 ];
+
 
 const TOTAL_SLIDES = phoneSlides.length || 4;
 let currentIndex = 0;

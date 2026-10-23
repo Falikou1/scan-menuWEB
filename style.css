@@ -521,16 +521,16 @@ button { border: none; cursor: pointer; font-family: inherit; }
 .stat-label { font-size: 14px; color: var(--gray-text); font-weight: 500; line-height: 1.5; }
 
 /* PARTNERS */
-.partners { padding: var(--section-py) 0; background: var(--white); }
+.partners { padding: var(--section-py) 0; background: var(--white); overflow: hidden; }
 .partners-header { margin-bottom: 60px; }
-.partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.partners-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .partner-card { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--gray-border); box-shadow: var(--shadow-sm); transition: all .4s var(--ease); display: flex; flex-direction: column; }
 .partner-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-.partner-card-image { height: 220px; overflow: hidden; position: relative; }
-.partner-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
-.partner-card:hover .partner-card-image img { transform: scale(1.06); }
+.partner-card-image { height: 240px; overflow: hidden; position: relative; border-radius: 16px 16px 0 0; }
+.partner-card-image > img:not(.partner-bg-img) { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.partner-card:hover .partner-card-image > img:not(.partner-bg-img) { transform: scale(1.06); }
 .partner-badge { position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-radius: 100px; padding: 5px 12px; font-size: 12px; font-weight: 600; color: var(--orange); border: 1.5px solid var(--orange-mid); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
-.partner-badge svg { width: 14px; height: 14px; color: var(--orange); flex-shrink: 0; }
+.partner-badge svg { width: 14px; height: 14px; color: rgba(255,255,255,0.9); flex-shrink: 0; }
 .partner-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
 .partner-card-name { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
 .partner-card-desc { font-size: 14px; color: var(--gray-text); line-height: 1.6; flex: 1; margin-bottom: 20px; }
@@ -711,7 +711,7 @@ button { border: none; cursor: pointer; font-family: inherit; }
 /* FOOTER */
 .footer { background: var(--dark-2); padding: 80px 0 32px; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 64px; }
-.footer-brand-logo { height: 40px; width: auto; margin-bottom: 16px; }
+.footer-brand-logo { height: 44px; width: auto; margin-bottom: 16px; }
 .footer-brand-desc { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.7; max-width: 280px; margin-bottom: 24px; }
 .footer-socials { display: flex; gap: 10px; }
 .social-btn { width: 40px; height: 40px; background: rgba(255,255,255,.07); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); transition: all .2s; }
@@ -805,4 +805,244 @@ button { border: none; cursor: pointer; font-family: inherit; }
   .stats-grid { grid-template-columns: 1fr; }
   .cta-contacts { flex-direction: column; align-items: center; }
   .container { padding: 0 16px; }
+}
+
+/* =============================================
+   PARTNER CARDS – REAL RESTAURANTS
+   ============================================= */
+
+
+
+
+.partner-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px) brightness(0.45);
+  transform: scale(1.08);
+  transition: transform 0.5s ease;
+}
+
+.partner-card:hover .partner-bg-img {
+  transform: scale(1.14);
+}
+
+/* Logo centré par-dessus le fond flouté */
+.partner-logo-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.partner-logo-badge {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover .partner-logo-circle {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+
+.partner-logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+/* Le Méchoui – fond doré foncé */
+.mechoui-logo {
+  background: linear-gradient(145deg, #3a1e07, #5a2e0d);
+  border: 3px solid #c9a84c;
+}
+
+.partner-logo-text {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.mechoui-text {
+  color: #c9a84c;
+  font-family: 'Georgia', serif;
+  letter-spacing: -1px;
+}
+
+.partner-logo-sub {
+  color: #d4b86a;
+  font-size: 0.55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Rico Café – fond sombre vintage */
+.rico-logo {
+  background: #111;
+  border: 3px solid #8b6b3d;
+}
+
+.rico-logo img {
+  background: #111;
+}
+
+/* Le Roi du Poulet – fond rouge/jaune */
+.roi-logo {
+  background: #fff;
+  border: 3px solid #e63012;
+}
+
+.roi-logo img {
+  background: #fff;
+  padding: 4px;
+}
+
+/* Badge cuisine */
+.partner-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 3;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+/* =============================================
+   CARTE APPEL À PARTENAIRE (VOTRE ÉTABLISSEMENT)
+   ============================================= */
+.partner-card-cta {
+  background: var(--white);
+  border: 1px solid var(--gray-border);
+  position: relative;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.partner-card-cta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(234, 88, 12, 0.12);
+}
+
+.partner-cta-image {
+  background: #FFF1E6;
+  height: 240px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+.partner-cta-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  border-radius: 100px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #E05305;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+}
+
+.partner-cta-badge svg {
+  color: #E05305;
+  width: 14px;
+  height: 14px;
+}
+
+.partner-cta-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.partner-cta-circle {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  border: 2px dashed #E05305;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E05305;
+  transition: transform 0.35s ease, background-color 0.35s ease;
+}
+
+.partner-card-cta:hover .partner-cta-circle {
+  transform: scale(1.08);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.partner-cta-text {
+  font-size: 15px;
+  font-weight: 800;
+  color: #E05305;
+  letter-spacing: -0.2px;
+  text-align: center;
+}
+
+.partner-cta-btn {
+  width: 100%;
+  justify-content: center;
+  border-radius: 100px;
+  padding: 13px 20px;
+  font-weight: 700;
+  font-size: 14px;
+  background: linear-gradient(135deg, #E05305, #F97316);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(224, 83, 5, 0.28);
+  margin-top: auto;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.partner-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(224, 83, 5, 0.38);
 }
