@@ -58,9 +58,10 @@ const prevBtn      = qs('#phonePrevBtn');
 const nextBtn      = qs('#phoneNextBtn');
 
 const RESTAURANT_DATA = [
-  { name: "Le Méchoui", tag: "Le Méchoui", price: "Libanais · Maison fondée en 1990" },
-  { name: "Rico Café", tag: "Rico Café", price: "Café & Snacking · Style vintage" },
-  { name: "Le Roi du Poulet", tag: "Le Roi du Poulet", price: "Fast-food libanais · Chawarma" }
+  { name: "Le Méchoui · Choix de la langue", tag: "Multilingue", price: "8 langues disponibles" },
+  { name: "Le Méchoui · Accueil & Menus", tag: "Accueil", price: "Cuisine Libanaise Authentique" },
+  { name: "Le Méchoui · Notre Carte", tag: "Menu principal", price: "Suggestions, Salades & Mezzés" },
+  { name: "Le Méchoui · Carte des Boissons", tag: "Boissons", price: "Cocktails, Vins & Spiritueux" }
 ];
 
 

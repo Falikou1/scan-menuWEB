@@ -70,16 +70,19 @@
             </div>
           </div>
 
-          <!-- Écran intérieur du téléphone : diaporama animé avec transitions PowerPoint -->
+          <!-- Écran intérieur du téléphone : diaporama animé des interfaces Le Méchoui -->
           <div class="phone-screen" id="phoneScreen">
-            <div class="phone-slide is-active" data-index="0" role="tabpanel" aria-label="Menu Le Méchoui">
-              <img src="images/menu_mechoui.png" alt="Menu Le Méchoui" loading="eager" />
+            <div class="phone-slide is-active" data-index="0" role="tabpanel" aria-label="Le Méchoui - Choix de la langue">
+              <img src="images/menu_mechoui_langues.png" alt="Le Méchoui - Choix de la langue" loading="eager" />
             </div>
-            <div class="phone-slide" data-index="1" role="tabpanel" aria-label="Menu Rico Café">
-              <img src="images/menu_rico.png" alt="Menu Rico Café" loading="lazy" />
+            <div class="phone-slide" data-index="1" role="tabpanel" aria-label="Le Méchoui - Accueil & Services">
+              <img src="images/menu_mechoui_accueil.png" alt="Le Méchoui - Accueil & Services" loading="lazy" />
             </div>
-            <div class="phone-slide" data-index="2" role="tabpanel" aria-label="Menu Le Roi du Poulet">
-              <img src="images/menu_roi_poulet.png" alt="Menu Le Roi du Poulet" loading="lazy" />
+            <div class="phone-slide" data-index="2" role="tabpanel" aria-label="Le Méchoui - Notre Carte">
+              <img src="images/menu_mechoui_carte.png" alt="Le Méchoui - Notre Carte" loading="lazy" />
+            </div>
+            <div class="phone-slide" data-index="3" role="tabpanel" aria-label="Le Méchoui - Carte des Boissons">
+              <img src="images/menu_mechoui_boissons.png" alt="Le Méchoui - Carte des Boissons" loading="lazy" />
             </div>
             <!-- Reflet d'écran haut de gamme -->
             <div class="phone-glare" aria-hidden="true"></div>
@@ -90,21 +93,22 @@
       </div>
 
       <!-- Bouton navigation suivant -->
-      <button class="phone-nav-btn next" id="phoneNextBtn" aria-label="Menu suivant" title="Menu suivant">
+      <button class="phone-nav-btn next" id="phoneNextBtn" aria-label="Interface suivante" title="Interface suivante">
         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
       </button>
     </div>
 
     <!-- Contrôles et indicateur en dessous du smartphone -->
     <div class="phone-bottom-bar">
-      <div class="phone-dots" id="phoneDots" role="tablist" aria-label="Navigation des menus">
-        <button class="phone-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Le Méchoui"></button>
-        <button class="phone-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Rico Café"></button>
-        <button class="phone-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Le Roi du Poulet"></button>
+      <div class="phone-dots" id="phoneDots" role="tablist" aria-label="Navigation des interfaces Le Méchoui">
+        <button class="phone-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Choix de la langue"></button>
+        <button class="phone-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Accueil & Menus"></button>
+        <button class="phone-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Notre Carte"></button>
+        <button class="phone-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Carte des Boissons"></button>
       </div>
       <div class="phone-active-label" id="phoneActiveLabel">
         <span class="live-indicator"></span>
-        <strong id="restaurantTitle">Le Méchoui</strong>
+        <strong id="restaurantTitle">Le Méchoui · Choix de la langue</strong>
       </div>
     </div>
 
